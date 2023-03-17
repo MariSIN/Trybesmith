@@ -16,7 +16,18 @@ const getAllProducts = async (): Promise<IProduct[]> => {
   return result;
 };
 
+const updateProducts = async (orderId: number, productId: number): Promise<ResultSetHeader> => {
+  const query = `UPDATE Trybesmith.products 
+  SET order_id = ? WHERE id = ?`;
+
+  const [result] = await connection
+    .execute<RowDataPacket[] & ResultSetHeader>(query, [orderId, productId]);
+
+  return result;
+};
+
 export default {
   createProduct,
   getAllProducts,
+  updateProducts,
 };

@@ -7,7 +7,10 @@ const login = async (req: Request, res: Response) => {
   const user = req.body;
 
   const findUser = await loginService.login(user);
-  const token = createToken({ findUser });
+
+  const { password, ...rest } = findUser;
+
+  const token = createToken(rest);
   
   res.status(statusCodes.OK).json({ token });
 };

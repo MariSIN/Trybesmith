@@ -7,9 +7,9 @@ import userRouter from './routes/users';
 const app = express();
 
 app.use(express.json());
-app.use('/products', productRouter);
-app.use('/users', userRouter);
-app.use('/orders', ordersRouter);
 app.use('/login', loginRouter);
+app.use('/users', userRouter);
+app.use('/products', productRouter);
+app.use('/orders', ordersRouter);
 
 export default app;
