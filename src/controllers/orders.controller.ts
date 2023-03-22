@@ -9,8 +9,7 @@ const findAll = async (_req: Request, res: Response) => {
 };
 
 const create = async (req: Request, res: Response) => {
-  const { productsIds } = req.body;
-  const { id } = req.body.userToken;
+  const { productsIds, userToken: { id } } = req.body;
   await ordersService.create({ userId: id, productsIds });
   
   res.status(statusCodes.CREATED).json({ userId: id, productsIds });
