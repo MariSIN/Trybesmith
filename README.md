@@ -182,31 +182,6 @@ Foi criado alguns endpoints que irão ler e escrever em um banco de dados, utili
 
 - O endpoint deve ser acessível através do caminho (`/products`);
 
-<details close>
-  <summary>Além disso, as seguintes verificações serão feitas:</summary>
-
-  <br>
-
-  > 👉 Para caso os dados sejam enviados corretamente
-    - O resultado retornado para listar produtos com sucesso deverá ser conforme exibido abaixo, com um _status http_ `200`:
-    ```json
-    [
-      {
-        "id": 1,
-        "name": "Poção de cura",
-        "amount": "20 gold",
-        "orderId": null
-      },
-      {
-        "id": 2,
-        "name": "Escudo do Herói",
-        "amount": "100 diamond",
-        "orderId": 1
-      }
-    ]
-    ```
-</details>
-
 ---
 
 ## 3 - Crie um endpoint para o cadastro de pessoas usuárias
@@ -232,28 +207,6 @@ Foi criado alguns endpoints que irão ler e escrever em um banco de dados, utili
 - O endpoint deve ser acessível através do caminho (`/orders`).
 - Essa rota deve retornar todos os pedidos e os `id`s dos produtos associados a estes.
 
-<details close>
-
-  <br>
-
-  > 👉 Para orders
-    - Quando houver mais de um pedido, o resultado retornado para listar pedidos com sucesso deverá ser conforme exibido abaixo, com um _status http_ `200`:
-    ```json
-      [
-        {
-          "id": 1,
-          "userId": 2,
-          "productsIds": [1, 2]
-        },
-        {
-          "id": 2,
-          "userId": 1,
-          "productsIds": [3, 4]
-        }
-      ]
-    ```
-</details>
-
 ---
 
 ## 5 - Crie um endpoint para o login de pessoas usuárias
@@ -272,43 +225,6 @@ Foi criado alguns endpoints que irão ler e escrever em um banco de dados, utili
   }
 ```
 
-<details close>
- <summary>Além disso, as seguintes verificações serão feitas:</summary>
-
-  <br>
-
-  > 👉 Para caso haja problemas no login
-    - Se o _login_ não tiver o campo "username", o resultado retornado deverá ser um _status http_ `400` e
-    ```json
-      { "message": "\"username\" is required" }
-    ```
-
-    - Se o _login_ não tiver o campo "password", o resultado retornado deverá ser um _status http_ `400`
-    ```json
-      { "message": "\"password\" is required" }
-    ```
-
-    - Se o _login_ tiver o username inválido, o resultado retornado deverá ser um _status http_ `401` e
-    ```json
-      { "message": "Username or password invalid" }
-    ```
-
-    - Se o login tiver a senha inválida, o resultado retornado deverá ser um _status http_ `401` e
-    ```json
-      { "message": "Username or password invalid" }
-    ```
-
-  <br>
-
-  > 👉 Para caso os dados sejam enviados corretamente
-    - Se o login foi feito com sucesso, o resultado deverá ser um _status http_ `200` e deverá retornar um _token_:
-    ```json
-    {
-      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
-    }
-    ```
-</details>
-
 ---
 
 ## Requisitos Bônus
@@ -318,49 +234,6 @@ Foi criado alguns endpoints que irão ler e escrever em um banco de dados, utili
 - Vamos realizar as validações referentes a criação do endpont do requisito 1?
 
 - Neste requisito de validação, não é necessário conectar com o banco de dados
-
-<details close>
-
-  <br>
-
-  > 👉 Para name
-    - Se o campo "name" não for informado, o resultado retornado deverá ser um  _status http_ `400` e
-    ```json
-      { "message": "\"name\" is required" }
-    ```
-
-    - Se o campo "name" não for do tipo `string`, o resultado retornado deverá ser um _status http_ `422` e
-    ```json
-      { "message": "\"name\" must be a string" }
-    ```
-
-    - Se o campo "name" não for uma string com mais de 2 caracteres, o resultado retornado deverá ser um _status http_ `422` e
-    ```json
-      { "message": "\"name\" length must be at least 3 characters long" }
-    ```
-
-  <br>
-
-  > 👉 Para amount
-    - Se o campo "amount" não for informado, o resultado retornado deverá ser um _status http_ `400` e
-    ```json
-      { "message": "\"amount\" is required" }
-    ```
-
-    - Se o campo "amount" não for do tipo `string`, o resultado retornado deverá ser um _status http_ `422` e
-    ```json
-      { "message": "\"amount\" must be a string" }
-    ```
-
-    - Se o campo "amount" não for uma string com mais de 2 caracteres, o resultado retornado deverá ser um _status http_ `422` e
-    ```json
-      { "message": "\"amount\" length must be at least 3 characters long" }
-    ```
-
-  <br>
-
-</details>
-
 
 ---
 
