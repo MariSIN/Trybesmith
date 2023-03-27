@@ -19,7 +19,7 @@ Foi criado alguns endpoints que irão ler e escrever em um banco de dados, utili
 </details>
 
 <details>
-  <summary><strong>🐳 Rodando no Docker vs Localmente</strong></summary><br />
+  <summary><strong>🐳 Rodando no Docker </strong></summary><br />
 
   ## Com Docker
 
