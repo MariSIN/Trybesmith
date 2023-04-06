@@ -1,11 +1,6 @@
 # Boas vindas ao repositório do projeto Trybesmith!
 
-
- Foi criada uma loja de itens medievais, no formato de uma API, utilizando Typescript.
-
-Foi desenvolvida todas as camadas da aplicação (Models, Service e Controllers) e por meio dessa aplicação, é possível realizar as operações básicas que se pode fazer em um determinado banco de dados: Criação, Leitura, Atualização e Exclusão (ou CRUD - Create, Read, Update e Delete).
-
-Foi criado alguns endpoints que irão ler e escrever em um banco de dados, utilizando o **MySQL**.
+Foi desenvolvido um projeto de loja online de itens medievais, utilizando Typescript, no formato de uma API. A aplicação foi construída com as camadas de Models, Service e Controllers e permite realizar operações básicas em um banco de dados, como criar, ler, atualizar e excluir registros (CRUD). Foram criados alguns pontos de acesso (endpoints) que interagem com um banco de dados MySQL, permitindo ler e gravar informações.
 
 
 <details>
